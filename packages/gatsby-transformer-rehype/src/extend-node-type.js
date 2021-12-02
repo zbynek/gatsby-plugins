@@ -66,7 +66,7 @@ module.exports = ({
         let rehype = new Rehype().data(`settings`, rehypeOptions)
 
         for (let plugin of pluginOptions.plugins) {
-            const requiredPlugin = require(plugin.resolve)
+            const requiredPlugin = plugin.module || require(plugin.resolve)
             if (_.isFunction(requiredPlugin.setParserPlugins)) {
                 for (let parserPlugin of requiredPlugin.setParserPlugins(plugin.pluginOptions)) {
                     if (_.isArray(parserPlugin)) {
@@ -82,7 +82,7 @@ module.exports = ({
         async function processHtmlAst(htmlNode) {
             // Use Bluebird's Promise function "each" to run rehype plugins serially.
             await Promise.each(pluginOptions.plugins, (plugin) => {
-                const requiredPlugin = require(plugin.resolve)
+                const requiredPlugin = plugin.module || require(plugin.resolve)
                 if (_.isFunction(requiredPlugin.mutateSource)) {
                     return requiredPlugin.mutateSource({ htmlNode, getNode, getNodesByType,
                         reporter, cache: getCache(plugin.name), getCache,
@@ -99,7 +99,7 @@ module.exports = ({
             const htmlAst = rehype.parse(htmlNode.internal.content)
 
             await Promise.each(pluginOptions.plugins, (plugin) => {
-                const requiredPlugin = require(plugin.resolve)
+                const requiredPlugin = plugin.module || require(plugin.resolve)
                 // Allow both exports = function(), and exports.default = function()
                 const defaultFunction = _.isFunction(requiredPlugin)
                     ? requiredPlugin

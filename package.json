@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "yarn workspaces run  -p lint",
-    "test": "yarn workspaces run -p test"
+    "dopack": "yarn build; yarn workspaces run -p yarn pack",
+    "lint": "yarn workspaces run -p lint",
+    "test": "yarn workspaces run -p test",
+    "build": "yarn workspaces run -p build"
   },
   "workspaces": [
     "packages/*"

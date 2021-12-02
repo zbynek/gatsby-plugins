@@ -1,17 +1,18 @@
 {
-    "name": "gatsby-transformer-rehype",
+    "name": "@halkeye/gatsby-transformer-rehype",
     "description": "Gatsby transformer plugin for HTML using the Rehype library and ecosystem",
-    "version": "2.0.0",
+    "version": "1.0.0",
     "license": "MIT",
-    "author": "styxlab",
-    "homepage": "https://github.com/styxlab/",
+    "author": "Gavin Mogan <npm@gavinmogan.com> (https://www.gavinmogan.com/)",
+    "homepage": "https://github.com/halkeye/gatsby-plugins",
     "main": "gatsby-node.js",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/styxlab/gatsby-theme-try-ghost/tree/master/packages/gatsby-transformer-rehype"
+        "url": "https://github.com/halkeye/gatsby-plugins.git",
+        "directory": "packages/gatsby-transformer-rehype"
     },
     "bugs": {
-        "url": "https://github.com/styxlab/gatsby-theme-try-ghost/issues"
+        "url": "https://github.com/halkeye/gatsby-plugins/issues"
     },
     "keywords": [
         "gatsby",
@@ -24,6 +25,8 @@
         "jamify-transformer-rehype"
     ],
     "scripts": {
+        "lint": "exit 0",
+        "test": "exit 0",
         "build": "babel src --out-dir . --ignore **/__tests__",
         "prepare": "cross-env NODE_ENV=production npm run build",
         "watch": "babel -w src --out-dir . --ignore **/__tests__"
@@ -43,6 +46,6 @@
         "cross-env": "7.0.3"
     },
     "peerDependencies": {
-        "gatsby": "^3.0.0"
+        "gatsby": "^3.0.0 || ^4.0.0"
     }
 }

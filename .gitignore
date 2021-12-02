@@ -123,3 +123,6 @@ dist
 .pnp.*
 
 # End of https://www.toptal.com/developers/gitignore/api/node
+packages/gatsby-transformer-rehype/*.js
+!packages/gatsby-transformer-rehype/index.js
+packages/gatsby-transformer-rehype/utils

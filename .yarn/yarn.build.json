@@ -1,0 +1,19 @@
+{
+  "comment": "This is an auto-generated file, it keeps track of whats been built. This is a local file, don't store this in version control.",
+  "packages": {
+    "packages/gatsby-transformer-rehype#test": {
+      "lastModified": 1638468998111.15,
+      "status": "succeeded",
+      "haveCheckedForRerun": true,
+      "rerun": false,
+      "command": "test"
+    },
+    "packages/gatsby-rehype-autolink-headers#test": {
+      "lastModified": 1638469148477.636,
+      "status": "succeeded",
+      "haveCheckedForRerun": true,
+      "rerun": false,
+      "command": "test"
+    }
+  }
+}

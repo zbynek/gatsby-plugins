@@ -25,7 +25,7 @@
         "jamify-transformer-rehype"
     ],
     "scripts": {
-        "lint": "exit 0",
+        "lint": "eslint --ignore-path .gitignore .",
         "test": "exit 0",
         "build": "babel src --out-dir . --ignore **/__tests__",
         "prepare": "cross-env NODE_ENV=production npm run build",

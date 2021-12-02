@@ -32,6 +32,7 @@ module.exports = ({htmlAst}, pluginOptions) => {
         maintainCase,
         removeAccents,
         enableCustomId,
+        prependId,
         isIconAfterHeader,
         elements,
     } = merge({}, pluginDefaults, pluginOptions);
@@ -63,10 +64,13 @@ module.exports = ({htmlAst}, pluginOptions) => {
             const slug = slugs.slug(toString(node).trim(), maintainCase);
             id = removeAccents ? deburr(slug)() : slug;
         }
+        const label = id.split('-').join(' ').trim();
+        if (prependId) {
+            id = `${prependId}${id}`;
+        }
         node.properties = {...node.properties || {}, id: id};
 
         if (icon !== false) {
-            const label = id.split('-').join(' ').trim();
             const method = isIconAfterHeader ? 'push' : 'unshift';
             const styles = styleToObject(node.properties.style || '') || {};
             styles.position = 'relative';
@@ -74,7 +78,7 @@ module.exports = ({htmlAst}, pluginOptions) => {
             node.children[method](rehype.parse(`<a href="#${id}" aria-label="${label} permalink" class="${className} ${isIconAfterHeader ? 'after' : 'before'}">${icon}</a>`));
         }
     };
-    visit(htmlAst, node =>node?.tagName?.match(/^h\d+$/), visitNode);
+    visit(htmlAst, node => node?.tagName?.match(/^h\d+$/), visitNode);
 
     return htmlAst;
 };

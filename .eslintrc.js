@@ -1,3 +1,4 @@
+const path = require('path');
 module.exports = {
   parser: `@babel/eslint-parser`,
   extends: [
@@ -13,7 +14,7 @@ module.exports = {
       jsx: true,
     },
     babelOptions: {
-      configFile: `./.babelrc.js`,
+      configFile: path.resolve(__dirname, `.babelrc.js`),
     },
   },
   env: {
@@ -28,6 +29,7 @@ module.exports = {
     spyOn: true,
   },
   rules: {
+    'max-len': 0,
     "@babel/no-unused-expressions": [
       `error`,
       {

@@ -1,7 +1,7 @@
 {
     "name": "@halkeye/gatsby-transformer-rehype",
     "description": "Gatsby transformer plugin for HTML using the Rehype library and ecosystem",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "MIT",
     "author": "Gavin Mogan <npm@gavinmogan.com> (https://www.gavinmogan.com/)",
     "homepage": "https://github.com/halkeye/gatsby-plugins",

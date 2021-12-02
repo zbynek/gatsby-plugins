@@ -4,16 +4,23 @@
     "packages/gatsby-transformer-rehype#test": {
       "lastModified": 1638468998111.15,
       "status": "succeeded",
-      "haveCheckedForRerun": true,
-      "rerun": false,
-      "command": "test"
+      "haveCheckedForRerun": false,
+      "rerun": true,
+      "command": "build"
     },
     "packages/gatsby-rehype-autolink-headers#test": {
       "lastModified": 1638469148477.636,
       "status": "succeeded",
-      "haveCheckedForRerun": true,
-      "rerun": false,
-      "command": "test"
+      "haveCheckedForRerun": false,
+      "rerun": true,
+      "command": "build"
+    },
+    "packages/gatsby-rehype-autolink-headers#build": {
+      "lastModified": 1638469346232.905,
+      "status": "succeeded",
+      "haveCheckedForRerun": false,
+      "rerun": true,
+      "command": "build"
     }
   }
 }

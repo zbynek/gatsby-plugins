@@ -1,0 +1,13 @@
+{
+  "name": "root",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "yarn workspaces run  -p lint",
+    "test": "yarn workspaces run -p test"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}

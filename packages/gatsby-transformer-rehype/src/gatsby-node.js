@@ -12,18 +12,7 @@ exports.pluginOptionsSchema = function({Joi}) {
     space: Joi.string().description(`Space mode`).default(`html`),
     emitParseErrors: Joi.boolean().description(`EmitParseErrors mode`).default(`false`),
     verbose: Joi.boolean().description(`verbose mode`).default(`false`),
-    plugins:
-            Joi.subPlugins ?
-                Joi.subPlugins({entry: `index`}) :
-                Joi.array()
-                    .items(
-                        Joi.string(),
-                        Joi.object({
-                          resolve: Joi.string(),
-                          options: Joi.object({}).unknown(true),
-                        })
-                    )
-                    .default([]),
+    plugins: Joi.subPlugins(),
   });
 };
 
